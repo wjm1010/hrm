@@ -1,0 +1,63 @@
+variables:
+  NPM_REGISTRY: "npm.hfjy.red:4873"
+  NPM_AUTH_TOKEN: "NEp/wBNA7U3ZIvmic9+phQ=="
+before_script:
+  - CASE_PATH="$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/${CI_BUILD_TAG:-$CI_BUILD_REF_NAME}"
+  - CASE_PATH_MASTER="$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/master"
+  - echo $CASE_PATH
+stages:
+  - deploy
+  - alertify
+
+deploy-branches:
+  stage: deploy
+  script:
+#    - echo -e "//$NPM_REGISTRY/:_authToken=\"$NPM_AUTH_TOKEN\"\nregistry=http://$NPM_REGISTRY" > ~/.npmrc
+    - mkdir -p /tmp/runner_caches/$CASE_PATH/node_modules
+    - cp -f -r /tmp/runner_caches/$CASE_PATH/node_modules ./
+    - export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
+    - npm run init --registry=https://registry.npm.taobao.org
+    - cp -f -r ./node_modules /tmp/runner_caches/$CASE_PATH/
+    - npm run build:prod
+    - echo "$CI_BUILD_TAG" > ./dist/VERSION.txt
+
+    #- mkdir -p "_tmpdir/$CASE_PATH"
+    #- rsync -avur -e 'ssh -o StrictHostKeyChecking=no' _tmpdir/ $PUB_TO/
+
+    - echo "推送到开发节点 $PUB_TO/$CASE_PATH/"
+    - rsync -avur -e 'ssh -o StrictHostKeyChecking=no' dist/ dev@192.168.0.87:/opt/case/lms3/hrm/F_hrm/
+
+    # - echo "192.168.0.3推送到dev $PUB_TO/$CASE_PATH/"
+    # - rsync -avurz --delete -e 'ssh -o StrictHostKeyChecking=no -i /home/gitlab-runner/.ssh/spub_key -p 22' dist/ dev@192.168.0.87:/opt/case/lms/vueDemo/F_vueDemo/
+
+    #- echo "101.37.24.82推送到test $PUB_TO/$CASE_PATH/"
+    #- rsync -avurz --delete -e 'ssh -o StrictHostKeyChecking=no -i /home/gitlab-runner/.ssh/spub_key -p 16300' dist/ dev@101.37.24.82:/opt/case/lms/izj/F_izj/
+
+deploy-tags:
+  stage: deploy
+  only:
+    - tags
+    - triggers
+  variables:
+    PUB_TO: "dev@web.hfjy.red:/opt/case/web"
+  script:
+#    - echo -e "//$NPM_REGISTRY/:_authToken=\"$NPM_AUTH_TOKEN\"\nregistry=http://$NPM_REGISTRY" > ~/.npmrc
+    - mkdir -p /tmp/runner_caches/$CASE_PATH_MASTER/node_modules
+    - cp -f -r /tmp/runner_caches/$CASE_PATH_MASTER/node_modules ./
+    - export SASS_BINARY_SITE=http://npm.taobao.org/mirrors/node-sass
+    - npm i --registry=https://registry.npm.taobao.org --verbose
+    - npm run build:prod
+    - echo "$CI_BUILD_TAG" > ./dist/VERSION.txt
+    - date +%F >> ./dist/VERSION.txt
+    - git tag -l -n100 $CI_COMMIT_TAG >> ./dist/VERSION.txt
+    # - echo "101.37.24.82推送到test $PUB_TO/$CASE_PATH/"
+    - rsync -avurz -e 'ssh -o StrictHostKeyChecking=no -i /home/gitlab-runner/.ssh/spub_key -p 16300' --exclude-from=exclude.txt dist/ dev@101.37.24.82:/opt/case/lms3/hrm/F_hrm/
+
+alertify-job:
+  stage: alertify
+  only:
+    - tags
+    - branches
+  script:
+    - ./ci-alertify.sh
+  when: on_failure

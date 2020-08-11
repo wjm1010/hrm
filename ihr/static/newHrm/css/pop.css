@@ -1,0 +1,155 @@
+.hs-masker {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: #000;
+  opacity: .3;
+  z-index: 1000;
+}
+
+.hs-mask, .hs-shade {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-color: #0c0c0c;
+  opacity: .8;
+  z-index: 9000;
+  display: none;
+}
+
+.hs-pop-panel {
+  position: fixed;
+  top: 120px;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  min-height: 300px;
+  z-index: 1001;
+}
+.hs-pop-panel.w650{
+	width: 650px;
+	margin-left: -325px;
+}
+.hs-pop-panel.w460{
+	margin-left: -230px;
+	width: 460px;
+}
+.hs-pop-panel .panle-title {
+  position: relative;
+  line-height: 42px;
+  padding: 0px 15px;
+  font-size: 16px;
+  color: #fff;
+  background: #696e72;
+  border: 1px solid #696e72;
+}
+.hs-pop-panel .panle-title .panel-colse {
+  position: absolute;
+    margin: 13px 15px;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+  background: url("../../../images/zpb4/setting/images/close.png");
+}
+.hs-pop-panel .panle-body{
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.hs-pop-panel .hs-oper-panel {
+  margin: 20px 0px;
+  margin-right: 20px;
+  min-height: 34px;
+}
+.hs-pop-panel .panle-bottom {
+    width: 100%;
+    height: 54px;
+    bottom: 0;
+    left: 0;
+    padding: 9px 0px;
+    border-top: 1px solid #ccc;
+}
+
+.txt-ce{
+	text-align: center;
+}
+
+.txt-rh{
+	text-align: center;
+}
+
+.hs-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.panle-bottom.txt-ce .hs-link{
+	float: none;
+}
+.panle-bottom .hs-link{
+	float: right;
+	display: inline-block;
+  width: 100px;
+  height: 34px;
+  line-height: 34px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 20px;
+  border-radius: 3px;
+}
+
+.hs-pop-panel .hs-black-btn {
+  background-color: #939b9e;
+}
+.hs-pop-panel .hs-blue-btn {
+  background-color: #01abf4;
+}
+.hs-blue-btn:hover {
+    background-color: #0c9edc;
+}
+.hs-pop-panel .hs-lightBlue-btn {
+  background-color: #7ad5fc;
+}
+.hs-pop-panel .hs-orange-btn {
+  background-color: #ffa752;
+  margin-left: 0;
+}
+
+.hs-pop-panel .hs-gray-btn {
+	
+   background-color: #c4c9cc;
+}
+.hs-gray-btn:hover{
+	
+	background-color: #a7aaad;
+}
+
+.hs-pop-panel .close {
+    position: absolute;
+    right: 3px;
+    top: 5px;
+}
+.c-icon.close {
+    width: 8px;
+    height: 8px;
+    color:#fff;
+    background: #f85659;
+    border-radius:50%;
+    opacity: .5;
+}
+.c-icon.close:hover {
+    
+    opacity: .8;
+}

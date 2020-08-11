@@ -1,0 +1,64 @@
+
+body {
+    background: #efeded;
+}
+.content {
+    max-width: 7.5rem;
+    margin: auto;
+    position: relative;
+    background: #fff;
+}
+
+.page01-content {
+    width: 100%;
+    height: 18.6rem;
+    background: url(../imgs/campus01.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.page01 {
+    padding-top: 5.4rem;
+}
+
+.page01,.page02,.page03 {
+    width: 90%;
+    height: 2.98rem;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+.page01-content img{
+    width: 100%;
+}
+.page04 {
+    width: 90%;
+    height: 2.16rem;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+
+.page05,.page07 {
+    width: 100%;
+    padding: 0.4rem 0.5rem 0.3rem;
+}
+
+.page06 {
+    padding: 0 0.5rem;
+}
+
+.page06 .title {
+    width: 0.6rem;
+    height: 2px;
+    background: #666666;
+    margin: 0 auto 0.2rem;
+}
+
+.page06 .tct {
+    line-height: 0.44rem;
+    color: #7F7D7D;
+}
+.page09 {
+    width: 100%;
+    padding: 0.3rem 0.5rem 0.6rem;
+}

@@ -1,0 +1,78 @@
+pipeline {
+    agent any
+    parameters {
+        choice choices: ['node'], description: '部署方式', name: 'APP_DEPLOY_TYPE'
+    }
+
+    triggers {
+        gitlab(triggerOnPush: true, triggerOnMergeRequest: true, branchFilterType: 'All')
+    }
+
+    stages {
+        stage('check auto build'){
+            steps {
+                script {
+                    try {
+                        wrap([$class: 'BuildUser']) {
+                            sh '${JENKINS_SHELL_PATH}/check-build.sh'
+                        }
+                    }catch(e){
+                        echo 'no auto build'
+                        currentBuild.result = "ABORTED"
+                        sh 'curl -n -X POST ${BUILD_URL}doDelete'
+                        error
+                    }
+                }
+            }
+        }
+        stage('up jenkins desc'){
+            steps {
+                script {
+                    currentBuild.displayName="${BUILD_NUMBER}"
+                    sh '${JENKINS_SHELL_PATH}/git.sh'
+                }
+            }
+        }
+        stage('npm something'){
+            steps {
+                script{
+                    sh '${JENKINS_SHELL_PATH}/node.sh'
+                }
+            }
+        }
+        stage('release code') {
+            steps {
+                script {
+                    sh '${JENKINS_SHELL_PATH}/release-${APP_DEPLOY_TYPE}.sh'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            script {
+                def status = "SUCCESS"
+                try {
+                     wrap([$class: 'BuildUser']) {
+                        sh "bash ${JENKINS_SHELL_PATH}/send-dingding.sh '${status}' ${BUILD_USER} 本次发布成功"
+                    }
+                }catch(e){
+                        sh "bash ${JENKINS_SHELL_PATH}/send-dingding.sh '${status}' jenkins 本次发布成功"
+                }
+            }
+        }
+        failure {
+            script {
+                def status = "FAILED"
+                try {
+                     wrap([$class: 'BuildUser']) {
+                        sh "bash ${JENKINS_SHELL_PATH}/send-dingding.sh '${status}' ${BUILD_USER}"
+                    }
+                }catch(e){
+                        sh "bash ${JENKINS_SHELL_PATH}/send-dingding.sh '${status}' jenkins"
+                }
+            }
+        }
+    }
+ }

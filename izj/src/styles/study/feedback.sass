@@ -1,0 +1,58 @@
+// src/views/study/feedback.vue
+.el-rate__icon
+	font-size: 24px
+ul
+	margin: 0
+	padding: 0
+	list-style: none
+	&.nav
+		margin-bottom: 50px
+		display: flex
+		font-size: 20px
+		justify-content: space-around
+		li
+			cursor: pointer
+			padding: 0 10px 10px 
+			&.act
+				border-bottom: 2px solid #2C7EFF
+				color: #2C7EFF
+.con
+	.con-student
+		li
+			line-height: 50px
+			font-size: 18px
+			color: #000
+			display: flex
+			justify-content: space-between
+			span:last-child
+				color: #999
+	.con-teacher
+		h2
+			padding-bottom: 20px
+		display: flex
+		& > div
+			flex: 1
+		.con-teacher-rate
+			dl
+				dt
+					color: #333
+				margin-left: 10px
+				dd
+					margin: 0
+		.con-teacher-point
+			li
+				background: #b6e4fe
+				padding: 10px 15px
+				color: #000
+				display: inline-block
+				margin-right: 20px
+				margin-bottom: 20px
+	.con-commit, .con-teacher
+		h2
+			font-weight: normal
+			color: #000
+			font-size: 20px		
+	.con-commit
+		margin-top: 50px
+		p
+			text-indent: 2em

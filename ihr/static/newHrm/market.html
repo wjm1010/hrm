@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <!-- 如果你的网站不想被剥去外衣、往赤裸的身体上贴广告 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./campus/css/reset.css">
+    <link rel="stylesheet" href="./campus/css/subjectTeacher.css">
+    <title>海风校园招聘</title>
+    <script type="text/javascript">
+        (function () {
+            function w() {
+                var r = document.documentElement
+                var a = r.getBoundingClientRect().width
+                if (a > 750) {
+                    a = 750
+                }
+                // 750/w = 100/font-size
+                rem = a / 7.5
+                r.style.fontSize = rem + 'px'
+            };
+            var t
+            w()
+            window.addEventListener('resize', function () {
+                clearTimeout(t)
+                t = setTimeout(w, 300)
+            }, false)
+        })()
+    </script>
+</head>
+
+<body>
+<div class="content">
+    <div class="page02"></div>
+    <!-- 教师表单提交 -->
+    <div class="content-form">
+        <form id="formMarket" enctype='multipart/form-data'>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp;1.您的姓名:</div>
+                <div class="hf-bm-item">
+                    <input type="text" name="name" class="name form-control form-control1" placeholder="请输入真实姓名">
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入姓名</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp; 2.您的手机号:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <input type="text" name="phone" class="phone form-control form-control1" placeholder="请填手机号以便HR联系">
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入手机号</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp; 3.您的邮箱:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <input type="text" name="email" class="email form-control form-control1" placeholder="请填邮箱以便HR联系">
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入邮箱</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp;4.您的学历:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <select name="education" class="education form-control form-control1">
+                        <option value="">请输入你的学历</option>
+                        <option value="4">本科</option>
+                        <option value="1">中专</option>
+                        <option value="2">高中</option>
+                        <option value="3">专科</option>
+                        <option value="5">硕士</option>
+                        <option value="6">博士</option>
+                        <option value="7">其他</option>
+                    </select>
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入你的学历</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp;5.您的毕业院校:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <input type="text" name="school" class="school form-control form-control1" placeholder="请填毕业院校">
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入毕业院校</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp;6.您的专业:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <input type="text" name="specialty" class="specialty form-control form-control1" placeholder="请填专业">
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入专业</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">
+                    <span class="text_red">*</span>&nbsp;7.您是否为应届生:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <select name="graduate" class="graduate form-control form-control1">
+                        <option value="1">是</option>
+                        <option value="2">否</option>
+                    </select>
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入应届生</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+            <div class="single">
+                <div class="from-title">&nbsp;8.您的籍贯:</div>
+                <div class="hf-bm-item phone-hf-bm-item">
+                    <input type="text" name="home" class="home form-control" placeholder="省份+城市">
+                </div>
+                <div class="error_c">
+                    <div class="error_info">请输入籍贯</div>
+                </div>
+                <div class="transverse-line"></div>
+            </div>
+
+            <div class="single">
+                <div class="from-title">&nbsp;9.上传简历:</div>
+                <div class="Upload-resume">
+                    <input type="file" id="input-file" name="file">
+                    <input type="hidden" id="domain" name="appendix" class="appendix form-control" >
+                    <!-- <div class="Upload-resume-btn">
+                        <input type="file" name="file" id="pic" />
+                    </div> -->
+                </div>
+            </div>
+            <div class="from-c">
+                <img src="./campus/imgs/campus17.png" alt="教师表单提交" class="market-btn  recruitments-btn">
+            </div>
+
+        </form>
+    </div>
+    <!-- 教师表单提交结束 -->
+
+    <!-- 成功 -->
+    <div class="content-dialog popover" id="dialog1">
+        <div class="popover-frosting"></div>
+        <div class="popover-up">
+            <div class="share">
+                <div class="campuskx">
+                    <img src="./campus/imgs/campus15.png" alt="">
+                </div>
+                <div class="submit-text  successful-submit-text popover">
+                    <P>您已提交成功~</P>
+                    <p>请保持电话通畅，以便HR联系~</p>
+                </div>
+                <div class="submit-text repetition-submit-text popover">
+                    <P>您已提交过~</P>
+                    <p>请勿重复提交哦~</p>
+                </div>
+                <img src="./campus/imgs/campus14.png" alt="教师表单提交" class="successful-btn confirm-btn market-btn">
+            </div>
+        </div>
+    </div>
+
+    <!-- 失败 -->
+    <div class="content-dialog popover" id="dialog2">
+        <div class="popover-frosting"></div>
+        <div class="popover-up">
+            <div class="share">
+                <div class="campuskx">
+                    <img src="./campus/imgs/campus16.png" alt="">
+                </div>
+                <div class="submit-text">
+                    <P>提交失败了~</P>
+                    <p class="err-submit-text"></p>
+                </div>
+                <img src="./campus/imgs/campus14.png" alt="教师表单提交" class="error-btn confirm-btn market-btn">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://st.hfjy.com/render/jquery/jquery.min-2.2.0.js"></script>
+<script src="./campus/js/pop-up.js"></script>
+<script src="./campus/js/market.js"></script>
+
+</body>
+
+</html>

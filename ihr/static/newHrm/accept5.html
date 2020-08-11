@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+* { margin: 0; padding: 0 }
+.body { width: 960px; margin: 20px auto; border: 1px solid #ccc; padding-bottom: 40px }
+.header { background: #666666; line-height: 120px; text-align: center; color: #fff; font-size: 30px; font-weight: bold; letter-spacing: 2px }
+.main-content { padding: 50px; }
+.main-content .title { color: #666666; font-size: 16px; font-weight: bold }
+.main-content div { padding: 40px; }
+.main-content div p { line-height: 50px }
+.main-content div p input { margin-right: 10px }
+textarea { outline: none; padding: 20px; }
+.main-content div p .subtn { background: #169bd5; border: 0; color: #fff; padding: 12px 40px; cursor: pointer; border-radius: 4px }
+</style>
+</head>
+<body class="body">
+
+<div class="header">
+	感谢您选择海风教育
+</div>
+<div class="main-content">
+	<div>
+		<form action="post" id="formData">
+			<input type="hidden" name="resumeId" class="resumeId" >
+			<input type="hidden" name="takeIn" value="1">
+			<input type="hidden" name="type" value="offer" >
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="//cdn-vip.hfjy.top/newtpl/static/hrm/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./js/public.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var _params = GetRequest()
+		var _is_submit = false
+
+		if (_params && _params.resumeId)  $('.resumeId').val(_params.resumeId)
+			console.log(1111);
+		if(!_is_submit ){
+        	_is_submit = true
+	        $.ajax({
+                type: 'post',
+                data: $('#formData').serialize(),
+                url: "/newHrm/handleData.php",
+                success: function(data) {
+                	console.log(data);
+                	var data  = eval('('+data+')')
+					if(!data.code != '0x000000'){
+						alert(data.message);
+						return;
+					}
+                }
+            });
+        }
+	})
+</script>
+</body>
+</html>

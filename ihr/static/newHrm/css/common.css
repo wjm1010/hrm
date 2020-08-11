@@ -1,0 +1,274 @@
+/*通用css*/
+@-ms-viewport {
+  width: device-width;
+}
+/*整体架构css*/
+html, body {
+	font-family: "微软雅黑";
+    background: #EEEFF4;
+    color:#333;
+}
+.row-fluid [class*="span"]{
+    margin:0;
+}
+.container .guideTip{
+	position: absolute;
+    left: -202px;
+    top: -20px;
+    width: 202px;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    background: #fff;
+    font-size:14px;
+    font-family:'微软雅黑';
+    color:#666;
+}
+.container .guideTip .guideList{
+	width:100%;
+	height:100%;
+}
+.container .guideTip .guideList span{
+	margin-right:5px;
+}
+.container .guideTip .guideList div{
+	border: 1px solid #efefef;
+    text-align: center;
+    line-height: 42px;
+    width:162px;
+    height:42px;
+    border-radius: 5px;
+	cursor:pointer;
+	margin: 15px 20px;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+    padding: 0;
+    margin-right:100px;
+}
+.container .header {
+  	padding: 0 5%;
+  	height: 60px;
+    line-height: 60px;
+    background: #378eed;
+    font-size:16px;
+}
+.header div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.header a, .header ul, .header p {
+    display: inline-block;
+}
+.header ul li {
+    float: left;
+    position:relative;
+}
+.header ul a {
+    padding: 0 2rem;
+    color:#fff;
+}
+
+.header .exit img {
+    margin-top: 22px !important;
+    margin-left: 10px;
+}
+.container .header span a{
+	color:#fff !important;
+	display:inline;
+}
+.container .header div >a {
+	max-width:100px;
+	max-height:40px;
+}
+.container .header a img{
+	margin-top:10px;
+	vertical-align: top;
+	margin-right: 5px;
+}
+.header ul .menu_tag {
+    position: absolute;
+    top: 8px;
+    right: 0px;
+}
+.header ul, .right .search ul {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding-left:1rem;
+}
+.header ul .active, .header .manage {
+    /* color:#37AFE4; */
+	border-bottom:3px solid #fff; 
+	height:60px;  
+}
+.header .manage {
+    padding: 0 1rem;
+    border-radius: 12px;
+    border:1px solid #37AFE4;
+    height: 2rem;
+    line-height: 2rem;
+}
+.header .userPhoto {
+    border-radius:50%;
+    cursor: pointer;
+}
+.container .main {
+    margin-top:1rem;
+}
+.container .main .left {
+    padding: 0 0.5rem 0 1rem;
+    width: 25.4%;
+    min-width:300px;
+    max-width: 310px;
+}
+.container .main {
+    overflow: auto;
+    position: relative;
+    margin:0 5%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.container .footer {
+	width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+}
+.container .main .right {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    padding: 0 1rem 0 0.5rem;
+}
+.main.row-fluid{
+	margin-top:15px;
+}
+.aside {
+    position: fixed;
+    right: -4rem;
+    top: 0;
+    background: #59607a;
+    z-index: 100;
+    width: 4rem;
+    height: 100%;
+    transition: all 600ms;
+    -webkit-transition: all 600ms;
+}
+.open {
+    right: 0;
+}
+.aside p {
+    margin: 0;
+    padding: 9px 7px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    background: #59607a;
+    cursor: pointer;
+    transition: all 600ms;
+    -webkit-transition: all 600ms;
+}
+.aside ul {
+	height:100%;
+    padding: 0 1rem;
+    text-align: center;
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -152px; 
+    background: #59607a;
+}
+.aside ul li{
+	margin-bottom:15px;
+}
+.aside ul li:nth-last-of-type(2) {
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.aside ul li:nth-last-of-type(1) {
+	margin-bottom:30px;
+}
+.aside ul a {
+    color: #fff;
+}
+.aside ul a span {
+    display: block;
+}
+a, a:active, a:hover, a:visited {
+    text-decoration: none;
+    display: inline-block;
+}
+em {
+    font-style: normal;
+}
+ul li {
+    list-style: none;
+}
+.none {
+	display:none;
+}
+/*卡片通用样式*/
+.card {
+    background: #fff;
+    box-shadow: 2px 2px 5px #ddd;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+}
+/*标签样式*/
+.tag {
+  font-size: 1rem;
+  color: #fff;
+  padding: 2px 0.6rem;
+  border-radius: 1rem;
+  display: inline-block;
+}
+.dot {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.tag_1 {
+      background: #70bcfe;
+}
+.tag_2 {
+      background: #3cc56d;
+}
+.tag_3 {
+      background: #FF5252;
+}
+.tag_4 {
+      background: #DACF35;
+}
+.tag_5 {
+      background: #ffc603;
+}
+.color_1 {
+      color: #205deb;
+}
+.color_2 {
+      color: #1ecde2;
+}
+.color_3 {
+      color: #42cb85;
+}
+.color_4 {
+      color: #fec506;
+}
+.color_5 {
+      color: #e21e20;
+}
