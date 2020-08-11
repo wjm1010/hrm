@@ -1,0 +1,237 @@
+.common-operations
+  background-color: #fff
+  padding: 10px
+
+  h3
+    margin-top: 0
+    color: #4F607B
+    font-size: 20px
+  .operations-body
+    .el-col
+      border: 1px solid rgb(204, 204, 204)
+      border-radius: 3px
+      cursor: pointer
+    .el-col:not(:first-child)
+      margin-left: 20px
+    .operation-content
+      text-align: center
+
+      img
+        width: 71px
+        height: 67px
+        margin: 35px 0 50px
+      .message
+        font-size: 28px
+        color: #4F607B
+      .number
+        font-size: 20px
+        color: #4F607B
+        margin: 20px 0
+
+
+.prompt
+  background-color: #fff
+  padding: 10px
+  margin-top: 10px
+  h3
+    margin-top: 0
+    color: #4F607B
+    font-size: 20px
+
+  .prompt-content
+    padding-left: 0
+    display: flex
+    li
+      &:not(:last-child)
+        margin-right: 50px
+      width: 50%
+      display: flex
+      justify-content: space-between
+      justify-items: center
+      align-items: center
+      background-color: #C9E8F5
+      padding: 10px
+      cursor: pointer
+  .phone-duration
+    padding-left: 0
+    li
+      width: 45%
+      display: inline-block
+      line-height: 33px
+      background-color: #C9E8F5
+      padding: 10px
+      span
+        color: #666666
+        .time
+          color: #0099ff
+          font-size: 20px
+    li:last-child
+      margin-left: 2%
+.calendar
+  background-color: #fff
+  padding: 10px
+  margin-top: 10px
+  h3
+    margin-top: 0
+    color: #4F607B
+    font-size: 20px
+  .getTime
+    text-align: center
+    margin-bottom: 25px
+    font-weight: bold
+    font-size: 24px
+  .checkbox-group
+    background: rgba(234, 236, 238, 1)
+    margin-bottom: 20px
+    padding: 10px
+    span
+      color: #000 !important
+    .audition-lesson,.official-lesson
+      width: 15px
+      height: 15px
+      border-radius: 50%
+      display: inline-block
+      vertical-align: sub
+      margin: 0 5px
+    .audition-lesson
+      background: #fca7f9
+    .trial-lesson
+      color: #fca7f9
+      font-size: 18px
+      font-weight: bold
+    .official-lesson
+      background: #AAEAAA
+    .formal-lesson
+      color: #AAEAAA
+      font-size: 18px
+      font-weight: bold
+.toCall-lesson
+  color: #0099FF
+  font-size: 16px
+  font-weight: bold
+
+.class-calendar
+  background-color: #fff
+  padding: 10px
+  margin-top: 10px
+  h3
+    margin-top: 0
+    color: #4F607B
+    font-size: 20px
+.calendar-content
+  ul
+    padding: 0
+    margin: 0
+
+  .weekList
+    line-height: 30px
+    border-top: 1px solid #cccccc
+    border-bottom: 1px solid #cccccc
+    li
+      width: 14.28%
+      display: inline-block
+      font-weight: bold
+      font-size: 14px
+      color: #4F607B
+      background: #c9e8f5
+      text-align: center
+      border-left: 1px solid #cccccc 
+      p
+        margin: 0
+  .dateList
+    line-height: 40px
+    margin-top: -3px
+    position: relative
+    border-bottom: 1px solid #ccc
+    .knobnumday
+      position: absolute
+      top: 2px
+      left: 4%
+      margin: 0
+      font-size: 18px
+      font-weight: bold
+      color: #0099FF
+      .knobnum
+        color: #ff66cc
+    li
+      width: 14.28%
+      display: inline-block
+      font-size: 12px
+      color: #4F607B
+      padding-left: 5px
+      border-left: 1px solid #cccccc 
+      p
+        margin: 0
+  .listinfor
+    border-bottom: 1px solid #ccc
+  .datetitle
+    display: inline-block
+    width: 14.28%
+    vertical-align: text-top
+    padding-left: 5px
+    border-left: 1px solid #cccccc
+    height: 200px
+    overflow: auto
+    overflow-x: hidden
+  .weekList li:last-child,.datetitle:last-child,.dateList li:last-child
+    border-right: 1px solid #cccccc
+
+.color-green
+  color: #009966 !important
+.color-red
+  color: #CC0000
+.color-blue
+  color: #0099FF
+
+i
+  font-style: normal
+
+li
+  list-style: none
+.dated
+  color: #b5b5b5
+.suspension
+  border: none !important
+  font-size: 12px
+  padding: 7px 0px
+  width: 93%
+  overflow: hidden
+  white-space: nowrap
+  text-overflow: ellipsis
+  text-align: left
+.auditionLesson,.officialLesson
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  display: inline-block
+  vertical-align: middle
+  margin: 0 5px
+.auditionLesson
+  background: #fca7f9
+.officialLesson
+  background: #AAEAAA
+.lessonST
+  color: #fca7f9
+.lessonZS
+  color: #AAEAAA
+/*滚动条 start*/  
+::-webkit-scrollbar
+  width: 8px
+  height: 5px
+  background-color: #F5F5F5
+ 
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+  background: #fff 
+ 
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb
+  border-radius: 3px
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  background-color:rgba(7, 170, 247, 0.7)
+ 
+::-webkit-scrollbar-thumb:hover
+  border-radius: 3px
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+  background-color:rgba(7, 170, 247, 1)

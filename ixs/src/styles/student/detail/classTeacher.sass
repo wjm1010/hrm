@@ -1,0 +1,91 @@
+.left
+  float: left
+.right
+  float: right
+.clearfix:before, .clearfix:after
+  content: ""
+  display: table
+.clearfix:after
+  clear: both
+i
+  font-style: normal
+li
+  list-style: none
+  margin: 0
+  padding: 0
+.class-techer-new
+  background-color: #ffffff
+  margin-top: 10px
+  > h3
+    padding: 10px 0 10px 10px
+    margin: 0
+  .body
+    flex-wrap: wrap
+  .el-col.el-col-8
+    padding: 8px !important
+    .panel
+      display: flex
+      flex-direction: column
+      background: #fff
+      padding: 10px 12px
+      border-radius: 3px
+      width: 100%
+      height: 340px
+      border: 1px solid #e8ebf0
+      .summary
+        margin-top: 30px 
+        word-break: break-all
+        height: 140px
+        font-size: 14px
+        padding: 10px
+        overflow-y: auto
+        background-color: #e8ebf0
+      .top
+        display: flex
+      .teacher-rate
+        width: 100%
+        flex-wrap: nowrap
+        .el-rate__icon .el-icon-star-on .teacher-icon-rate
+          margin-right: 0
+      .panelName
+        min-width: 40%
+        margin-right: 8px
+      .panelInfo
+        max-width: 65%
+      .course
+        display: flex
+        flex-direction: column
+        color: #86898F 
+        font-size: 20px
+        margin-bottom: 10px
+        >span
+          margin-bottom: 10px
+      .satisfaction
+        font-size: 12px
+        color: #525e71
+      ul
+        font-size: 14px
+        color: #525e71
+        padding: 0
+        margin: 0
+        .team
+          width: 100%
+          text-overflow: ellipsis
+          overflow: hidden
+          white-space: nowrap
+          >span
+            width: 100%
+        li
+          font-size: 12px
+          line-height: 24px
+          &.name
+            font-weight: 600
+            font-size: 16px
+          span
+            margin-right: 10px
+        .margin-right-0
+          span
+            margin-right: 0
+@media screen and (max-width: 1380px)
+  .panel
+    height: 360px !important
